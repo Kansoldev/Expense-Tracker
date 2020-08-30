@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Expense Tracker</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" href="assets/img/favicon.ico">
+		<link rel="stylesheet" href="assets/css/main.css">
+	</head>
+
+	<body>
+		<h1>Expense Tracker</h1>
+
+		<div class="tracker">
+			<div class="tracker__card">
+				<img src="assets/img/3135679.svg" />
+
+				<div class="tracker__info">
+					<h3 class="tracker__desc">Balance</h3>
+					<p class="tracker__amount">$<span id="balance">0.00</span></p>
+				</div>
+			</div>
+
+			<div class="tracker__card">
+				<img src="assets/img/income.png" />
+
+				<div class="tracker__info">
+					<h3 class="tracker__desc">Income</h3>
+					<p class="tracker__amount">$<span id="income">0.00</span></p>
+				</div>
+			</div>
+
+			<div class="tracker__card">
+				<img src="assets/img/expenses.png" />
+
+				<div class="tracker__info">
+					<h3 class="tracker__desc">Expenses</h3>
+					<p class="tracker__amount">-$<span id="expenses">0.00</span></p>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-tracker">
+			<button class="btn btn-income" id="btn-income">Add Income</button>
+			
+			<button class="btn btn-expenses" id="btn-expense">Add Expenses</button>
+		</div>
+
+		<div id="incomeModal" class="modal">
+			<div class="modal-content">
+				<span class="close" id="close">&times;</span>
+
+	            <form id="incomeForm">
+	            	<input type="text" placeholder="Enter income text" class="form-control" required>
+	            	<input type="number" placeholder="Enter income amount" class="form-control" required>
+	            	<input type="submit" class="btn" value="Add Income">
+	            </form>
+			</div>
+        </div>
+
+        <div id="expenseModal" class="modal">
+          <div class="modal-content">
+            <span class="close" id="close-expenses">&times;</span>
+
+            <form id="expenseForm">
+            	<input type="text" placeholder="Enter expenses" class="form-control" required>
+            	<input type="number" placeholder="Enter expense amount" class="form-control" required>
+            	<input type="submit" class="btn" value="Add Expenses">
+            </form>
+          </div>
+        </div>
+
+        <div id="output"></div>
+
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>

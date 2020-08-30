@@ -1,0 +1,280 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #E0E2EC;
+  font-family: Montserrat;
+}
+
+h1 {
+  color: #293244;
+  margin-top: 25px;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.tracker {
+  display: grid;
+  grid-template-columns: repeat(2, 3fr);
+  grid-gap: 2em;
+  width: 800px;
+  max-width: 100%;
+  margin: 25px auto;
+}
+@media (max-width: 480px) {
+  .tracker {
+    grid-template-columns: repeat(1, 2fr);
+    padding: 30px;
+  }
+}
+.tracker__card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.4s ease-in-out;
+}
+.tracker__card img {
+  width: 70px;
+}
+.tracker__card:first-child {
+  background-color: #293244;
+  grid-column: 1/4;
+  height: 180px;
+}
+@media (max-width: 480px) {
+  .tracker__card:first-child {
+    grid-column: 1/2;
+    height: 130px;
+  }
+}
+.tracker__card:nth-child(2) {
+  background-color: #259AC3;
+  grid-column: 1/2;
+  height: 150px;
+}
+@media (max-width: 480px) {
+  .tracker__card:nth-child(2) {
+    height: 130px;
+  }
+}
+.tracker__card:last-child {
+  background-color: #F84158;
+  grid-column: 2/4;
+  height: 150px;
+}
+@media (max-width: 480px) {
+  .tracker__card:last-child {
+    grid-column: 1/2;
+    height: 130px;
+  }
+}
+.tracker__desc {
+  color: #fff;
+  font-size: 23px;
+  margin-bottom: 7px;
+}
+.tracker__amount {
+  color: #fff;
+  font-size: 20px;
+}
+
+.form-tracker {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 800px;
+  max-width: 100%;
+}
+@media (max-width: 480px) {
+  .form-tracker {
+    justify-content: space-around;
+  }
+}
+
+.form-control, .btn {
+  border: none;
+  border-radius: 0.3rem;
+  font-family: inherit;
+  outline: 0;
+  padding: 9px;
+}
+
+.form-control {
+  background-color: #fff;
+  font-size: 17px;
+  width: 80%;
+  margin-bottom: 20px;
+}
+@media (max-width: 480px) {
+  .form-control {
+    width: 75%;
+  }
+}
+
+.btn {
+  display: block;
+  background-color: #1B0E4B;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+@media (max-width: 480px) {
+  .btn {
+    width: 40%;
+    margin-top: 30px;
+    padding: 7px;
+  }
+}
+.btn-income {
+  background-color: #259AC3;
+}
+.btn-expenses {
+  background-color: #F84158;
+}
+
+.transactions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+  width: 600px;
+  max-width: 100%;
+  margin: 20px auto;
+  border-radius: 7px;
+  padding: 15px;
+}
+.transactions p {
+  font-size: 18px;
+}
+.transactions .income-delete-btn {
+  font-size: 25px;
+  cursor: pointer;
+  background-color: #fff;
+  color: #purple;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 1.03;
+}
+.transactions .delete-btn {
+  font-size: 25px;
+  cursor: pointer;
+  background-color: red;
+  color: #fff;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  line-height: 1.03;
+}
+.transactions.income {
+  background-color: purple;
+}
+.transactions.income p {
+  color: #fff;
+}
+.transactions.expenses {
+  background-color: #eee;
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 55%;
+  height: 70%;
+  margin: auto;
+  padding-top: 100px;
+}
+@media (max-width: 480px) {
+  .modal {
+    width: 80%;
+    height: 60%;
+    padding-top: 50px;
+  }
+}
+
+.modal-content {
+  background-color: #fefefe;
+  border: 1px solid #888;
+  border-radius: 6px;
+  margin: auto;
+  padding: 15px;
+  width: 70%;
+  height: auto;
+}
+.modal-content input {
+  border: 1px solid grey;
+  width: 100%;
+}
+@media (max-width: 480px) {
+  .modal-content {
+    width: 90%;
+  }
+}
+
+.close {
+  color: #333;
+  cursor: pointer;
+  font-size: 3rem;
+  font-weight: 500;
+  float: right;
+  margin-bottom: 20px;
+  text-shadow: 0 1px 0 #fff;
+}
+
+#incomeModal, #expenseModal {
+  transition: transform 0.6s ease-in-out;
+}
+
+#incomeModal {
+  transform: translateX(-1000px);
+}
+#incomeModal .btn {
+  background-color: #259AC3;
+  margin-top: 20px;
+  border: none;
+}
+
+#expenseModal {
+  transform: translateX(1000px);
+}
+#expenseModal .btn {
+  background-color: #F84158;
+  margin-top: 20px;
+  border: none;
+}
+
+#output {
+  margin: 30px;
+}
+
+/*# sourceMappingURL=main.css.map */
